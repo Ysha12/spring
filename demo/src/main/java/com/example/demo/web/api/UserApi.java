@@ -11,7 +11,7 @@ public interface UserApi {
     @RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
     public ResponseEntity addNewUser(@RequestBody User user);
 
-    @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/{email}", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity getUser(@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "3") int size);
 
     @RequestMapping(value = "/{ID}", method = RequestMethod.PUT, produces = "application/json")

@@ -11,9 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Data
+
 public class UserController implements UserApi {
     @Autowired
     private final User_service serv;
+    
+    //get all users
+
+public UserController(User_service serv) {
+        this.serv = serv;
+    }
 
 @Override
     public ResponseEntity getUser(int page, int size){
